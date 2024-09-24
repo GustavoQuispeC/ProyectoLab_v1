@@ -46,7 +46,7 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="relative z-10 overflow-hidden pt-[120px] pb-16 md:pt-[150px] md:pb-[120px] xl:pt-[180px] xl:pb-[160px] 2xl:pt-[210px] 2xl:pb-[200px]"
+        className="relative z-10 overflow-hidden pt-[80px] pb-16 md:pt-[80px] md:pb-[80px] xl:pt-[100px] xl:pb-[100px]"
       >
         <div className="container">
           <div className="flex flex-wrap -mx-4">
@@ -55,7 +55,7 @@ const Hero = () => {
                 className="wow fadeInUp mx-auto max-w-[1500px] text-center"
                 data-wow-delay=".2s"
               >
-                <div className="relative h-[600px] w-full overflow-hidden">
+                <div className="relative h-[300px] w-full overflow-hidden md:h-[600px]">
                   <div
                     className="flex transition-transform duration-500 ease-in-out"
                     style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -86,33 +86,32 @@ const Hero = () => {
                   </button>
                 </div>
                 <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                  Free and Open-Source Next.js Template for Startup & SaaS
+                  Más de 15 años de experiencia
                 </h1>
                 <p className="mb-12 text-base font-medium !leading-relaxed text-body-color dark:text-white dark:opacity-90 sm:text-lg md:text-xl">
-                  Startup is free Next.js template for startups and SaaS
-                  business websites comes with all the essential pages,
-                  components, and sections you need to launch a complete
-                  business website, built-with Next 13.x and Tailwind CSS.
+                  Nos dedicamos a realizar actividades de prevención,
+                  diagnóstico, tratamiento y rehabilitación, dirigidas a
+                  mantener o reestablecer el estado de salud de las personas.
                 </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
-                    href="https://nextjstemplates.com/templates/startup"
+                    href="#"
                     className="px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out rounded-md bg-primary hover:bg-primary/80"
                   >
-                    Download Now
+                    Consulta tus resultados
                   </Link>
                   <Link
-                    href="https://github.com/NextJSTemplates/startup-nextjs"
+                    href="#"
                     className="px-8 py-4 text-base font-semibold text-black duration-300 ease-in-out rounded-md bg-black/20 hover:bg-black/30 dark:bg-white/20 dark:text-white dark:hover:bg-white/30"
                   >
-                    Star on GitHub
+                    Agenda tus análisis
                   </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        {/* <div className="absolute top-0 right-0 z-[-1] opacity-30 lg:opacity-100">
+        <div className="absolute top-0 right-0 z-[-1] opacity-30 lg:opacity-100">
           <svg
             width="450"
             height="556"
@@ -249,7 +248,7 @@ const Hero = () => {
               </linearGradient>
             </defs>
           </svg>
-        </div> */}
+        </div>
         <div className="absolute bottom-0 left-0 z-[-1] opacity-30 lg:opacity-100">
           <svg
             width="364"

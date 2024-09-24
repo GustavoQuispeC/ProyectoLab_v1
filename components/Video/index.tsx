@@ -13,13 +13,13 @@ const Video = () => {
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="We are ready to help"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Algunas recomendaciones"
+          paragraph="Los análisis de laboratorio suelen formar parte de un chequeo de rutina para detectar cambios en su salud . También ayudan a los médicos a diagnosticar afecciones médicas, planificar o evaluar tratamientos y controlar enfermedades."
           center
           mb="80px"
         />
 
-        <div className="-mx-4 flex flex-wrap">
+        <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
             <div
               className="wow fadeInUp mx-auto max-w-[770px] overflow-hidden rounded-md"
@@ -27,7 +27,7 @@ const Video = () => {
             >
               <div className="relative aspect-[77/40] items-center justify-center">
                 <Image src="/images/video/video.jpg" alt="video image" fill />
-                <div className="absolute top-0 right-0 flex h-full w-full items-center justify-center">
+                <div className="absolute top-0 right-0 flex items-center justify-center w-full h-full">
                   <button
                     onClick={() => setOpen(true)}
                     className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white bg-opacity-75 text-primary transition hover:bg-opacity-100"
@@ -53,7 +53,7 @@ const Video = () => {
         autoplay={true}
         start={true}
         isOpen={isOpen}
-        videoId="L61p2uyiMSo"
+        videoId="4kWazT70FPM"
         onClose={() => setOpen(false)}
       />
 

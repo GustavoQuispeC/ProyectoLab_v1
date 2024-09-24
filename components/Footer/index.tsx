@@ -5,14 +5,14 @@ const Footer = () => {
   return (
     <>
       <footer
-        className="wow fadeInUp relative z-10 bg-primary bg-opacity-5 pt-16 md:pt-20 lg:pt-24"
+        className="relative z-10 pt-16 wow fadeInUp bg-primary bg-opacity-5 md:pt-20 lg:pt-24"
         data-wow-delay=".1s"
       >
         <div className="container">
-          <div className="-mx-4 flex flex-wrap">
+          <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
               <div className="mb-12 max-w-[360px] lg:mb-16">
-                <Link href="/" className="mb-8 inline-block">
+                <Link href="/" className="inline-block mb-8">
                   <Image
                     src="/images/logo/logo-2.png"
                     alt="logo"
@@ -28,9 +28,8 @@ const Footer = () => {
                     height={30}
                   />
                 </Link>
-                <p className="mb-9 text-base font-medium leading-relaxed text-body-color">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer lobortis.
+                <p className="text-base font-medium leading-relaxed mb-9 text-body-color">
+                  Desde 2023 cuidando de ti y tu familia.
                 </p>
                 <div className="flex items-center">
                   <a
@@ -96,13 +95,13 @@ const Footer = () => {
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
-                  Useful Links
+                  Enlaces útiles
                 </h2>
                 <ul>
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="inline-block mb-4 text-base font-medium text-body-color hover:text-primary"
                     >
                       {" "}
                       Blog{" "}
@@ -111,19 +110,19 @@ const Footer = () => {
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="inline-block mb-4 text-base font-medium text-body-color hover:text-primary"
                     >
                       {" "}
-                      Pricing{" "}
+                      Precios{" "}
                     </a>
                   </li>
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="inline-block mb-4 text-base font-medium text-body-color hover:text-primary"
                     >
                       {" "}
-                      About{" "}
+                      Acerca{" "}
                     </a>
                   </li>
                 </ul>
@@ -133,34 +132,34 @@ const Footer = () => {
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
-                  Terms
+                  Términos
                 </h2>
                 <ul>
-                  <li>
+                  {/* <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="inline-block mb-4 text-base font-medium text-body-color hover:text-primary"
                     >
                       {" "}
                       TOS{" "}
                     </a>
-                  </li>
+                  </li> */}
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="inline-block mb-4 text-base font-medium text-body-color hover:text-primary"
                     >
                       {" "}
-                      Privacy Policy{" "}
+                      Políticas de Privacidad{" "}
                     </a>
                   </li>
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="inline-block mb-4 text-base font-medium text-body-color hover:text-primary"
                     >
                       {" "}
-                      Refund Policy{" "}
+                      Politicas de Reembolso{" "}
                     </a>
                   </li>
                 </ul>
@@ -170,34 +169,34 @@ const Footer = () => {
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
-                  Support & Help
+                  Soporte y Ayuda
                 </h2>
                 <ul>
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="inline-block mb-4 text-base font-medium text-body-color hover:text-primary"
                     >
                       {" "}
-                      Open Support Ticket{" "}
+                      Generar Consulta{" "}
                     </a>
                   </li>
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="inline-block mb-4 text-base font-medium text-body-color hover:text-primary"
                     >
                       {" "}
-                      Terms of Use{" "}
+                      Términos de Uso{" "}
                     </a>
                   </li>
                   <li>
                     <a
                       href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
+                      className="inline-block mb-4 text-base font-medium text-body-color hover:text-primary"
                     >
                       {" "}
-                      About{" "}
+                      Nosotros{" "}
                     </a>
                   </li>
                 </ul>
@@ -205,9 +204,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="bg-primary/10 py-8">
+        <div className="py-8 bg-primary/10">
           <div className="container">
-            <p className="text-center text-base text-body-color dark:text-white">
+            <p className="text-base text-center text-body-color dark:text-white">
               Desarrollado por{" "}
               <a
                 href="https://gustavo-dev.com"

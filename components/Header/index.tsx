@@ -50,7 +50,7 @@ const Header = () => {
               <Link
                 href="/"
                 className={`header-logo block w-full ${
-                  sticky ? "py-5 lg:py-2" : "py-8"
+                  sticky ? "py-5 lg:py-2" : "py-2"
                 } `}
               >
                
@@ -155,13 +155,13 @@ const Header = () => {
                   href="/signin"
                   className="hidden py-3 text-base font-bold px-7 text-dark hover:opacity-70 dark:text-white md:block"
                 >
-                  Sign In
+                  Iniciar sesión
                 </Link>
                 <Link
                   href="/signup"
                   className="hidden px-8 py-3 text-base font-bold text-white transition duration-300 rounded-md ease-in-up bg-primary hover:bg-opacity-90 hover:shadow-signUp md:block md:px-9 lg:px-6 xl:px-9"
                 >
-                  Sign Up
+                  Salir
                 </Link>
                 <div>
                   <ThemeToggler />
