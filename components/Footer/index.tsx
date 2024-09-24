@@ -14,14 +14,14 @@ const Footer = () => {
               <div className="mb-12 max-w-[360px] lg:mb-16">
                 <Link href="/" className="mb-8 inline-block">
                   <Image
-                    src="images/logo/logo-2.svg"
+                    src="/images/logo/logo-2.png"
                     alt="logo"
                     className="w-full dark:hidden"
                     width={140}
                     height={30}
                   />
                   <Image
-                    src="images/logo/logo.svg"
+                    src="/images/logo/logo-2.png"
                     alt="logo"
                     className="hidden w-full dark:block"
                     width={140}
@@ -208,7 +208,15 @@ const Footer = () => {
         <div className="bg-primary/10 py-8">
           <div className="container">
             <p className="text-center text-base text-body-color dark:text-white">
-              Template by UIdeck and <a href="https://nextjstemplates.com" rel="nofollow noopener">Next.js Templates</a>
+              Desarrollado por{" "}
+              <a
+                href="https://gustavo-dev.com"
+                rel="nofollow noopener"
+                className="text-primary"
+                target="blank"
+              >
+                gusstavo-dev.com
+              </a>
             </p>
           </div>
         </div>

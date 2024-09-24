@@ -45,31 +45,32 @@ const Header = () => {
         }`}
       >
         <div className="container">
-          <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 xl:mr-12">
+          <div className="relative flex items-center justify-between -mx-4">
+            <div className="max-w-full px-4 xl:mr-12">
               <Link
                 href="/"
                 className={`header-logo block w-full ${
                   sticky ? "py-5 lg:py-2" : "py-8"
                 } `}
               >
+               
                 <Image
-                  src="/images/logo/logo-2.svg"
+                  src="/images/logo/logo-2.png"
                   alt="logo"
-                  width={140}
-                  height={30}
+                  width={380}
+                  height={80}
                   className="w-full dark:hidden"
                 />
                 <Image
-                  src="/images/logo/logo.svg"
+                  src="/images/logo/logo-2.png"
                   alt="logo"
-                  width={140}
-                  height={30}
+                  width={380}
+                  height={80}
                   className="hidden w-full dark:block"
                 />
               </Link>
             </div>
-            <div className="flex w-full items-center justify-between px-4">
+            <div className="flex items-center justify-between w-full px-4">
               <div>
                 <button
                   onClick={navbarToggleHandler}
@@ -103,7 +104,7 @@ const Header = () => {
                 >
                   <ul className="block lg:flex lg:space-x-12">
                     {menuData.map((menuItem, index) => (
-                      <li key={menuItem.id} className="group relative">
+                      <li key={menuItem.id} className="relative group">
                         {menuItem.path ? (
                           <Link
                             href={menuItem.path}
@@ -115,7 +116,7 @@ const Header = () => {
                           <>
                             <a
                               onClick={() => handleSubmenu(index)}
-                              className="flex cursor-pointer items-center justify-between py-2 text-base text-dark group-hover:opacity-70 dark:text-white lg:mr-0 lg:inline-flex lg:py-6 lg:px-0"
+                              className="flex items-center justify-between py-2 text-base cursor-pointer text-dark group-hover:opacity-70 dark:text-white lg:mr-0 lg:inline-flex lg:py-6 lg:px-0"
                             >
                               {menuItem.title}
                               <span className="pl-3">
@@ -152,13 +153,13 @@ const Header = () => {
               <div className="flex items-center justify-end pr-16 lg:pr-0">
                 <Link
                   href="/signin"
-                  className="hidden py-3 px-7 text-base font-bold text-dark hover:opacity-70 dark:text-white md:block"
+                  className="hidden py-3 text-base font-bold px-7 text-dark hover:opacity-70 dark:text-white md:block"
                 >
                   Sign In
                 </Link>
                 <Link
                   href="/signup"
-                  className="ease-in-up hidden rounded-md bg-primary py-3 px-8 text-base font-bold text-white transition duration-300 hover:bg-opacity-90 hover:shadow-signUp md:block md:px-9 lg:px-6 xl:px-9"
+                  className="hidden px-8 py-3 text-base font-bold text-white transition duration-300 rounded-md ease-in-up bg-primary hover:bg-opacity-90 hover:shadow-signUp md:block md:px-9 lg:px-6 xl:px-9"
                 >
                   Sign Up
                 </Link>

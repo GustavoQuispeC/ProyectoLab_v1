@@ -20,6 +20,7 @@ export default function RootLayout({
       <head />
 
       <body className="dark:bg-black">
+      
         <Providers>
           <Header />
           {children}
