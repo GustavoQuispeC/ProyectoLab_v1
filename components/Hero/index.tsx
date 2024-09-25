@@ -49,38 +49,38 @@ const Hero = () => {
         className="relative z-10 overflow-hidden pt-[80px] pb-16 md:pt-[80px] md:pb-[80px] xl:pt-[100px] xl:pb-[100px]"
       >
         <div className="container">
-          <div className="flex flex-wrap -mx-4">
+          <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
               <div
                 className="wow fadeInUp mx-auto max-w-[1500px] text-center"
                 data-wow-delay=".2s"
               >
-                <div className="relative h-[300px] w-full overflow-hidden md:h-[600px]">
+                <div className="relative h-[300px] w-full overflow-hidden md:h-[600px] ">
                   <div
                     className="flex transition-transform duration-500 ease-in-out"
                     style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                   >
                     {slides.map((slide, index) => (
-                      <div key={index} className="flex-shrink-0 w-full">
+                      <div key={index} className="w-full flex-shrink-0">
                         <Image
                           src={slide.image}
                           alt={slide.caption}
                           width={1500}
-                          height={500}
-                          className="object-contain w-full h-full"
+                          height={600}
+                          className="h-full w-full object-contain"
                         />
                       </div>
                     ))}
                   </div>
                   <button
                     onClick={goToPrevSlide}
-                    className="absolute p-2 text-white transform -translate-y-1/2 bg-gray-800 rounded-full top-1/2 left-4"
+                    className="bg-gray-800 absolute top-1/2 left-4 -translate-y-1/2 transform rounded-full p-2 text-white"
                   >
                     &lt;
                   </button>
                   <button
                     onClick={goToNextSlide}
-                    className="absolute p-2 text-white transform -translate-y-1/2 bg-gray-800 rounded-full top-1/2 right-4"
+                    className="bg-gray-800 absolute top-1/2 right-4 -translate-y-1/2 transform rounded-full p-2 text-white"
                   >
                     &gt;
                   </button>
@@ -96,13 +96,13 @@ const Hero = () => {
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
                     href="#"
-                    className="px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out rounded-md bg-primary hover:bg-primary/80"
+                    className="rounded-md bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
                   >
                     Consulta tus resultados
                   </Link>
                   <Link
                     href="#"
-                    className="px-8 py-4 text-base font-semibold text-black duration-300 ease-in-out rounded-md bg-black/20 hover:bg-black/30 dark:bg-white/20 dark:text-white dark:hover:bg-white/30"
+                    className="rounded-md bg-black/20 px-8 py-4 text-base font-semibold text-black duration-300 ease-in-out hover:bg-black/30 dark:bg-white/20 dark:text-white dark:hover:bg-white/30"
                   >
                     Agenda tus análisis
                   </Link>
