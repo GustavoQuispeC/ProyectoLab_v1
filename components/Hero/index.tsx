@@ -66,7 +66,7 @@ const Hero = () => {
                           src={slide.image}
                           alt={slide.caption}
                           width={1500}
-                          height={600}
+                          height={500}
                           className="h-full w-full object-contain"
                         />
                       </div>
