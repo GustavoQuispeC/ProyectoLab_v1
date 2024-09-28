@@ -8,17 +8,19 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { blueGrey, yellow } from "@mui/material/colors";
+import { blueGrey } from "@mui/material/colors";
 import { Link } from "@nextui-org/react";
 import { IoMdPersonAdd } from "react-icons/io";
 import { IMedico } from "@/interfaces/IMedico";
-import { getMedicos } from "@/helpers/medico/Medico.helper";
+import { deleteMedico, getMedicos } from "@/helpers/medico/Medico.helper";
 import { BsFillPencilFill } from "react-icons/bs";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { FaEye } from "react-icons/fa";
 import Tooltip from "@mui/material/Tooltip";
 import { Zoom } from "@mui/material";
-
+import Swal from "sweetalert2";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -52,12 +54,46 @@ const MedicoList = () => {
     fetchMedicos();
   }, []);
 
+  const handleDeleteMedico = async (id: string) => {
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "¡No podrás revertir esto!",
+      icon: "info",
+      showCancelButton: true,
+      confirmButtonColor: "#607d8b",
+      cancelButtonColor: "#bf360c",
+      confirmButtonText: "Sí, eliminar",
+      cancelButtonText: "Cancelar",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await deleteMedico(id);
+        const medicos = await getMedicos();
+        setMedicos(medicos);
+        handleNotifySucces();
+      }
+    });
+  };
+
+  //? toastify notification
+  const handleNotifySucces = () => {
+    toast.error("Registro eliminado correctamente", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
   return (
     <>
       <div className="container px-4 py-8 mx-auto">
         <div className="flex items-center justify-between py-3">
           <Link
-            href="/medicoAdd"
+            href="/medico/medicoAdd"
             style={{ color: "darkgreen", fontWeight: "bold" }}
           >
             <IoMdPersonAdd size={22} />
@@ -112,16 +148,19 @@ const MedicoList = () => {
                       </Tooltip>
                       <Tooltip TransitionComponent={Zoom} title="Editar">
                         <Link
-                          href={`/productList/${medico.id}`}
+                          href={`medicoList/${medico.id}`}
                           style={{ color: "#607d8b" }}
                         >
                           <BsFillPencilFill />
                         </Link>
                       </Tooltip>
                       <Tooltip TransitionComponent={Zoom} title="Eliminar">
-                        <Link href={`#`} style={{ color: "red" }}>
+                        <button
+                          onClick={() => handleDeleteMedico(medico.id)}
+                          style={{ color: "red" }}
+                        >
                           <RiDeleteBin6Fill />
-                        </Link>
+                        </button>
                       </Tooltip>
                     </div>
                   </StyledTableCell>
@@ -131,6 +170,7 @@ const MedicoList = () => {
           </Table>
         </TableContainer>
       </div>
+      <ToastContainer />
     </>
   );
 };

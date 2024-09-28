@@ -1,11 +1,9 @@
 "use client";
-
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-
-import { IMedicoError, IMedicoProps } from "@/interfaces/IMedico";
-import { addMedico } from "@/helpers/medico/Medico.helper";
-import { validateMedicoForm } from "@/utils/formMedicoValidation";
+import Breadcrumb from "@/components/Common/Breadcrumb";
+import { getMedicoById, updateMedico } from "@/helpers/medico/Medico.helper";
+import { IMedicoProps } from "@/interfaces/IMedico";
+import { notFound, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import { TextField } from "@mui/material";
 import { Button } from "@nextui-org/react";
@@ -16,33 +14,53 @@ import { IoIosSave, IoMdArrowRoundBack } from "react-icons/io";
 
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { validateMedicoForm } from "@/utils/formMedicoValidation";
 import { handleNotifyError, handleNotifySucces } from "@/utils/toastity";
 
-const MedicoAdd = () => {
+const MedicoUpdatePage = ({ params }: { params: { id: string } }) => {
   const router = useRouter();
+  //! Estado para controlar si el formulario ha sido enviado
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  //!estado para almacenar los datos del medico
   const [medicos, setMedicos] = useState<IMedicoProps>({
     nombres: "",
     apellidos: "",
-    especialidad: "",
     telefono: "",
     correo: "",
+    especialidad: "",
     observaciones: "",
   });
-
-  //! estado para almacenar los errores
-  const [errors, setErrors] = useState<IMedicoError>({
+  const [errors, setErrors] = useState<IMedicoProps>({
     nombres: "",
     apellidos: "",
-    especialidad: "",
     telefono: "",
     correo: "",
+    especialidad: "",
     observaciones: "",
   });
 
-  //! Estado para controlar si el formulario ha sido enviado
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  //! Obtener producto por ID
+  useEffect(() => {
+    const fetchMedico = async () => {
+      const medico = await getMedicoById(params.id);
+      console.log(medico);
+
+      if (medico) {
+        setMedicos({
+          nombres: medico.nombres || "",
+          apellidos: medico.apellidos || "",
+          telefono: medico.telefono || "",
+          correo: medico.correo || "",
+          especialidad: medico.especialidad || "",
+          observaciones: medico.observaciones || "",
+        });
+      } else {
+        router.push("/medico/medicoList");
+      }
+    };
+
+    fetchMedico();
+  }, [params.id, router]);
 
   //! Validación en tiempo real en los inputs
   const handleChange = (e: any) => {
@@ -72,11 +90,11 @@ const MedicoAdd = () => {
 
     if (Object.values(validationErrors).every((error) => !error)) {
       try {
-        await addMedico(medicos);
+        await updateMedico(params.id, medicos);
         handleNotifySucces();
         setTimeout(() => {
-          router.push("/medicoList");
-        }, 4000);
+          router.push("/medico/medicoList");
+        }, 2000);
       } catch (error) {
         handleNotifyError();
         console.error(`Error adding medics: ${error.message}`);
@@ -84,11 +102,11 @@ const MedicoAdd = () => {
     }
   };
 
- 
-
   return (
     <>
-      <div className="container px-4 pb-8 mx-auto mb-64 rounded-md dark:bg-current">
+      <Breadcrumb pageName="Listado de Médicos" description="" />
+
+      <div className="container mx-auto mb-64 rounded-md px-4 pb-8 dark:bg-current">
         <form
           onSubmit={handleSubmit}
           className="mx-auto max-w-4xl py-8 font-[sans-serif]"
@@ -181,7 +199,7 @@ const MedicoAdd = () => {
             </div>
           </div>
 
-          <div className="flex items-center mt-6">
+          <div className="mt-6 flex items-center">
             <div className="grid gap-4 sm:grid-cols-2">
               <Button color="primary" variant="flat" type="submit">
                 <IoIosSave size={20} />
@@ -204,5 +222,4 @@ const MedicoAdd = () => {
     </>
   );
 };
-
-export default MedicoAdd;
+export default MedicoUpdatePage;

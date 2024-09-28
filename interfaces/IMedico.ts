@@ -6,7 +6,7 @@ export interface IMedico {
   telefono: string;
   correo: string;
   fechaModificacion: Date;
-  id: number;
+  id: string;
   fechaCreacion: Date;
   estado: boolean;
 }
