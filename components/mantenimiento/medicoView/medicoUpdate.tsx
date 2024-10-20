@@ -1,9 +1,9 @@
 import React from 'react'
 
-const MedicoUpdate = () => {
+const MedicoView = () => {
   return (
     <div>medicoUpdate</div>
   )
 }
 
-export default MedicoUpdate
+export default MedicoView

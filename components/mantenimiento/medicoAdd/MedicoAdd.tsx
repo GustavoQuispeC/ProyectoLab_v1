@@ -75,8 +75,8 @@ const MedicoAdd = () => {
         await addMedico(medicos);
         handleNotifySucces();
         setTimeout(() => {
-          router.push("/medicoList");
-        }, 4000);
+          router.push("/medico/medicoList");
+        }, 2000);
       } catch (error) {
         handleNotifyError();
         console.error(`Error adding medics: ${error.message}`);
@@ -84,11 +84,9 @@ const MedicoAdd = () => {
     }
   };
 
- 
-
   return (
     <>
-      <div className="container px-4 pb-8 mx-auto mb-64 rounded-md dark:bg-current">
+      <div className="container mx-auto mb-64 rounded-md px-4 pb-8 dark:bg-current">
         <form
           onSubmit={handleSubmit}
           className="mx-auto max-w-4xl py-8 font-[sans-serif]"
@@ -181,7 +179,7 @@ const MedicoAdd = () => {
             </div>
           </div>
 
-          <div className="flex items-center mt-6">
+          <div className="mt-6 flex items-center">
             <div className="grid gap-4 sm:grid-cols-2">
               <Button color="primary" variant="flat" type="submit">
                 <IoIosSave size={20} />

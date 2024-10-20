@@ -5,7 +5,7 @@ import SingleTestimonial from "./SingleTestimonial";
 const testimonialData: Testimonial[] = [
   {
     id: 1,
-    name: "Musharof Chy",
+    name: "Alex Kalinski",
     designation: "Founder @TailGrids",
     content:
       "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
@@ -37,8 +37,8 @@ const Testimonials = () => {
     <section className="relative z-10 bg-primary/[.03] py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="What Our Users Says"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Lo que dicen nuestros usuarios"
+          paragraph="Nuestros usuarios están encantados con nosotros. Aquí hay algunos testimonios..."
           center
         />
 
