@@ -90,19 +90,19 @@ const MedicoList = () => {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-8">
+      <div className="container px-4 py-8 mx-auto">
         <div className="flex items-center justify-between py-3">
           <Link
             href="/medico/medicoAdd"
             style={{ color: "darkgreen", fontWeight: "bold" }}
           >
             <IoMdPersonAdd size={22} />
-            &nbsp;Agregar Médico
+            &nbsp;Agregar Personal de Salud
           </Link>
         </div>
 
-        <div className="flex w-full flex-shrink-0 flex-col items-stretch justify-end space-y-2 md:w-auto md:flex-row md:items-center md:space-x-3 md:space-y-0">
-          <div className="flex w-full items-center space-x-3 md:w-auto"></div>
+        <div className="flex flex-col items-stretch justify-end flex-shrink-0 w-full space-y-2 md:w-auto md:flex-row md:items-center md:space-x-3 md:space-y-0">
+          <div className="flex items-center w-full space-x-3 md:w-auto"></div>
         </div>
 
         <TableContainer component={Paper}>

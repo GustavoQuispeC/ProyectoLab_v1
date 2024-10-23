@@ -5,7 +5,7 @@ const MedicoListPage = () => {
   return (
     <>
     <Breadcrumb
-      pageName="Listado de Médicos"
+      pageName="Listado de Personal de Salud"
       description=""
     />
     <MedicoList/>

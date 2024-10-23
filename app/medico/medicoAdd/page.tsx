@@ -6,7 +6,7 @@ const MedicoAddPage = () => {
   return (
     <>
     <Breadcrumb
-    pageName="Agregar Médico"
+    pageName="Agregar Personal de Salud"
     description=""
   />
   <MedicoAdd/>
