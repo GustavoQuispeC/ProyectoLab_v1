@@ -31,4 +31,4 @@ export default function Home() {
   );
 }
 
-//Eliminar algunos page del home
+
